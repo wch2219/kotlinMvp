@@ -16,5 +16,9 @@
             android:title="我的"
     />
 
-
+    <item
+            android:icon="@mipmap/ic_launcher"
+            android:id="@+id/main_home3"
+            android:title="我的"
+    />
 </menu>

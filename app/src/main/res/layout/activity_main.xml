@@ -18,11 +18,12 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:layout_width="match_parent"
             android:id="@+id/bott_navi_view"
-            app:itemTextColor="@color/colorAccent"
+            app:itemTextColor="@color/selete_button_color"
             app:labelVisibilityMode="labeled"
-            app:itemBackground="@null"
+            app:itemBackground="@color/white"
+            app:itemIconTint="@color/selete_button_color"
             app:layout_constraintBottom_toBottomOf="@id/viewpage"
             android:layout_height="wrap_content"
             app:menu="@menu/main_bottom_navi"
-           />
+    />
 </LinearLayout>

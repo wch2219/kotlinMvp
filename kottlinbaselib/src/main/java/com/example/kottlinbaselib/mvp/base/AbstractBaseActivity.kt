@@ -26,7 +26,7 @@ abstract class AbstractBaseActivity<P : BasePresenter<IView>, V : IView> : AppCo
 
     abstract fun initData()
 
-    fun initListener() {}
+    open fun initListener() {}
 
 
     override fun showLoading() {
