@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.recyclerview.widget.RecyclerView
 
+@Suppress("UNCHECKED_CAST")
 class CommonViewHolder(itemView: View, var commonClickListener: OnItemCommonClickListener? = null) : RecyclerView.ViewHolder(itemView),InterfaceViewHolder<CommonViewHolder>{
 
     // SparseArray 比 HashMap 更省内存，在某些条件下性能更好，只能存储 key 为 int 类型的数据，
@@ -40,30 +41,30 @@ class CommonViewHolder(itemView: View, var commonClickListener: OnItemCommonClic
 
    override fun setText(viewId: Int, text: CharSequence): CommonViewHolder {
         val tv = getView<TextView>(viewId)
-        tv?.text = text
+        tv.text = text
         return this
     }
 
    override fun setViewVisibility(viewId: Int, visibility: Int): CommonViewHolder {
-        getView<View>(viewId)?.visibility = visibility
+        getView<View>(viewId).visibility = visibility
         return this
     }
 
    override fun setImageResource(viewId: Int, resourceId: Int): CommonViewHolder {
         val imageView = getView<ImageView>(viewId)
-        imageView?.setImageResource(resourceId)
+       imageView.setImageResource(resourceId)
         return this
     }
 
    override fun setTextColor(viewId: Int, textColor: Int): CommonViewHolder {
-        val view = getView<TextView>(viewId)
-        view?.setTextColor(textColor)
+        var view = getView<TextView>(viewId)
+       view.setTextColor(textColor)
         return this
     }
 
    override fun setBackGroundRes(viewId: Int, @DrawableRes resourceId: Int): CommonViewHolder {
         val view = getView<View>(viewId)
-        view?.setBackgroundResource(resourceId)
+        view.setBackgroundResource(resourceId)
 
         return this
     }
@@ -71,7 +72,7 @@ class CommonViewHolder(itemView: View, var commonClickListener: OnItemCommonClic
    override fun setCheckBox(viewId: Int, ischeck: Boolean): CommonViewHolder {
         val checkBox = getView<CheckBox>(viewId)
 
-        checkBox?.isChecked = ischeck
+        checkBox.isChecked = ischeck
 
         return this
     }
@@ -99,7 +100,7 @@ class CommonViewHolder(itemView: View, var commonClickListener: OnItemCommonClic
      */
     override fun setOnLongClickListener(viewId: Int, listener: View.OnLongClickListener): CommonViewHolder {
         val view = getView<View>(viewId)
-        view?.setOnLongClickListener(listener)
+        view.setOnLongClickListener(listener)
         return this
     }
 

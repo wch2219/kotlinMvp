@@ -26,7 +26,7 @@ abstract class CustomObserver<T>: Observer<T>,OnErrorCalBackListener {
         //       onError(400,"连接失败");
     }
 
-   override fun onError(code: Int, meee: String) {
+   override fun onError(code: Int, mess: String) {
 
 
 

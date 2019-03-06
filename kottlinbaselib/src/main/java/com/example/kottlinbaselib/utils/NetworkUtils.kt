@@ -8,9 +8,11 @@ import android.net.NetworkInfo
 import android.provider.Settings
 import android.telephony.TelephonyManager
 import java.util.*
-
+@Suppress("DEPRECATION")
+@SuppressLint("StaticFieldLeak")
 class NetworkUtils {
     companion object {
+
 
         private val mContext: Context? = null
         private var mInstance: NetworkUtils? = null
@@ -39,14 +41,14 @@ class NetworkUtils {
 
         var typeList: ArrayList<String> = ArrayList()
             init {
-                typeList.add("打开网络设置界面");
-                typeList.add("获取活动网络信息");
-                typeList.add("判断网络是否可用");
-                typeList.add("判断网络是否是4G");
-                typeList.add("判断wifi是否连接状态");
-                typeList.add("获取移动网络运营商名称");
-                typeList.add("获取当前的网络类型");
-                typeList.add("获取当前的网络类型(WIFI,2G,3G,4G)");
+                typeList.add("打开网络设置界面")
+                typeList.add("获取活动网络信息")
+                typeList.add("判断网络是否可用")
+                typeList.add("判断网络是否是4G")
+                typeList.add("判断wifi是否连接状态")
+                typeList.add("获取移动网络运营商名称")
+                typeList.add("获取当前的网络类型")
+                typeList.add("获取当前的网络类型(WIFI,2G,3G,4G)")
 
             }
 

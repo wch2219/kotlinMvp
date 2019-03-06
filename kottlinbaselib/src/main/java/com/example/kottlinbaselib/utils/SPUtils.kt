@@ -1,5 +1,6 @@
 package com.example.kottlinbaselib.utils
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 
@@ -17,21 +18,22 @@ class SPUtils {
         }
 
         //存储方式,存储位置：/data/data/<package name>/shared_prefs
+        @SuppressLint("ApplySharedPref")
         fun save(
             key: String,
             value: Any
         ) {
 
             if (value is String) {
-                mSharedPreferences!!.edit().putString(key, value).commit()
+                mSharedPreferences!!.edit().putString(key, value).apply()
             } else if (value is Boolean) {
-                mSharedPreferences!!.edit().putBoolean(key, value).commit()
+                mSharedPreferences!!.edit().putBoolean(key, value).apply()
             } else if (value is Int) {
-                mSharedPreferences!!.edit().putInt(key, value).commit()
+                mSharedPreferences!!.edit().putInt(key, value).apply()
             } else if (value is Float) {
-                mSharedPreferences!!.edit().putFloat(key, value).commit()
+                mSharedPreferences!!.edit().putFloat(key, value).apply()
             } else if (value is Long) {
-                mSharedPreferences!!.edit().putLong(key, value).commit()
+                mSharedPreferences!!.edit().putLong(key, value).apply()
             }
         }
 
