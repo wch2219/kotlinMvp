@@ -12,23 +12,27 @@ import com.example.kottlinbaselib.mvp.view.IView
 @Suppress("UNCHECKED_CAST")
 abstract class AbstractFragment<P : BasePresenter<IView>, V : IView> : Fragment(), ActivityMvpDelegateCallback<P, V>,
     IView {
-    var mContent: Context? = null
+    var mContext: Context? = null
     private var mPresenter: P? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         mPresenter = createPresenter()
-        var rootView = inflater.inflate(getLayoutId(), null)
+        val rootView = inflater.inflate(getLayoutId(), null)
         initView(rootView)
         initData()
         initlistener()
         return rootView
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        this.mContext = context
+    }
     abstract fun getLayoutId(): Int
     abstract fun initView(rootView: View?)
 
     abstract fun initData()
 
-    fun initlistener() {}
+    open fun initlistener() {}
 
     override fun getPresenter(): P? {
         return mPresenter

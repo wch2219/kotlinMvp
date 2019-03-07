@@ -1,5 +1,6 @@
 package com.example.kottlinbaselib.mvp.base
 
+import android.content.Context
 import android.os.Bundle
 
 import androidx.appcompat.app.AppCompatActivity
@@ -10,10 +11,12 @@ import com.example.kottlinbaselib.mvp.view.IView
 abstract class AbstractBaseActivity<P : BasePresenter<IView>, V : IView> : AppCompatActivity()
     , ActivityMvpDelegateCallback<P, V>, IView {
     private var mPresenter: P? = null
+    open var mContext:Context ?= null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mPresenter?.attachView(getMvpView())
         setContentView(getlayoutId())
+        mContext = this
         mPresenter = createPresenter()
         initView()
         initData()
