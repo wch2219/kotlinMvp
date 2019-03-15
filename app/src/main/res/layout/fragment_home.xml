@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
-             android:layout_height="match_parent"
+             android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
              tools:context=".ui.fragments.HomeFragment">
 
     <Button
@@ -10,5 +10,9 @@
             android:text="activity 转场动画"
             android:id="@+id/button1"
             android:layout_height="wrap_content"/>
-
+    <com.hg.kotlin.weight.ExpandableTextView
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dimen_50dp"
+            app:text="adsadas"
+            android:layout_height="wrap_content"/>
 </FrameLayout>

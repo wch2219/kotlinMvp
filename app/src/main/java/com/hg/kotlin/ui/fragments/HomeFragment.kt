@@ -37,7 +37,7 @@ class HomeFragment : AbstractFragment<MainPresenter<MainView>, MainView>(), View
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.button1 -> {
-                var intent:Intent= Intent()
+                var intent = Intent()
                 intent.setClass(mContext,AnimationActivity().javaClass)
                 startActivity(intent)
             }
